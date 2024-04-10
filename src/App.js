@@ -1,5 +1,6 @@
 import "./App.css";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
+import NotificationSound from "./assets/notificationSound.mp3";
 
 function App() {
   const [isTimerRunning, setTimerRunning] = useState(false);
@@ -11,6 +12,8 @@ function App() {
   const [isInvalidDate, setInvalidDate] = useState(false);
   const [isTimerComplete, setTimerComplete] = useState(false);
 
+  const audioPlayer = useRef(null);
+
   useEffect(() => {
     if (isTimerRunning) {
       const intervalId = setInterval(() => {
@@ -19,10 +22,7 @@ function App() {
           clearInterval(intervalId);
           setTimerRunning(false);
           setTimerComplete(true);
-          setDays(0);
-          setHours(0);
-          setMinutes(0);
-          setSeconds(0);
+          audioPlayer.current.play();
           return;
         }
         const remainingDays = Math.floor(remainingTime / (1000 * 60 * 60 * 24));
@@ -107,6 +107,7 @@ function App() {
         {isTimerComplete &&
           "🎉 The countdown is over! What's next on your adventure? 🎉"}
       </div>
+      <audio ref={audioPlayer} src={NotificationSound} />
     </div>
   );
 }
