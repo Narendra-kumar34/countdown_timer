@@ -1,3 +1,71 @@
-.App {
+.wrapper {
+  height: 100vh;
+  width: 100vw;
   text-align: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.dateselector {
+  padding: 10px;
+  border-radius: 0.5rem;
+  border: 1px solid white;
+  background: none;
+  color: white;
+}
+
+.timerButton {
+  padding: 10px;
+  border-radius: 0.5rem;
+  border: 1px solid white;
+  background: none;
+  color: white;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.messageline {
+  color: #AF53FF;
+  font-weight: bolder;
+}
+
+.card {
+  background-image: linear-gradient(to top right, #AF53FF, #6FECFF);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 5rem;
+  width: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+}
+
+.numberDisplay {
+  font-size: x-large;
+  font-weight: 700;
+  opacity: 80%;
+}
+
+.subhead {
+  font-weight: bold;
+  opacity: 50%;
+}
+
+.cardbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
